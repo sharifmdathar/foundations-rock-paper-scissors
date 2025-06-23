@@ -38,8 +38,16 @@ const playRound = (humanChoice, computerChoice) => {
   }
 };
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-console.log(`You chose ${humanChoice}`);
-console.log(`Computer chose ${computerChoice}`);
-playRound(humanChoice, computerChoice);
+const playGame = () => {
+  for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    console.log(`You chose ${humanChoice}`);
+    console.log(`Computer chose ${computerChoice}`);
+    playRound(humanChoice, computerChoice);
+    console.log("\n");
+  }
+  console.log(`Final Score: You=${humanScore} Computer=${computerScore}`);
+};
+
+playGame();
